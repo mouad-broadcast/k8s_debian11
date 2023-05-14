@@ -9,11 +9,13 @@
 
 
 ## 1 ) Set Host Name and update /etc/hosts file
-
+---
 192.168.122.20  master
+---
 192.168.122.30  node1 node-1 
+---
 192.168.122.40  node2 node-2 
-
+---
 2) Disable Swap on all nodes
 sudo swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
