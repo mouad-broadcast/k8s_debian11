@@ -17,39 +17,47 @@
 ```
 
 2) Disable Swap on all nodes
+```
 sudo swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
-
+```
 3) Install Containerd run time on all nodes
-
+```
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
 overlay
 br_netfilter
 EOF
-
+```
+```
 sudo modprobe overlay
 sudo modprobe br_netfilter
-
+```
+```
 cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-k8s.conf
 net.bridge.bridge-nf-call-iptables = 1
 net.ipv4.ip_forward = 1
 net.bridge.bridge-nf-call-ip6tables = 1
 EOF
-
+```
+```
 sudo sysctl --system
-
+```
+```
 echo "deb http://ftp.ca.debian.org/debian sid main" >> /etc/apt/sources.list
 sudo apt update
-
+```
+```
 apt-cache madison containerd
 apt install containerd=1.6.20~ds1-1+b1
-
+```
+```
 cd /etc/containerd/
 wget https://raw.githubusercontent.com/mouad-broadcast/k8s_debian11/main/config.toml
-
+```
+```
 systemctl restart containerd
 systemctl enable containerd
-
+```
 4) Add Kubernetes Apt Repository
 
 sudo apt install gnupg gnupg2 curl software-properties-common -y
