@@ -60,9 +60,10 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-kubectl get nodes
+
 #### Join both the worker nodes to the cluster by running ‘Kubeadm join’ command.
 kubeadm join master:6443 --token zpq071.q2qqh3kyb2kyqbtr    --discovery-token-ca-cert-hash sha256:100a6a27707f32afb03bf7b201e504af04c62b561a92e92fdbaa66e01ef9b895
+kubectl get nodes
 
 7) Kubectl autocomplete
 source <(kubectl completion bash)
@@ -77,6 +78,10 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/
 k get nodes
 k get pods -A -owide
 
+9) Test Kubernetes Cluster
+kubectl create deployment nginx-web --image=nginx --replicas 2
+kubectl expose deployment nginx-web --name=nginx-svc --type NodePort --port 80 --target-port 80
+kubectl describe svc nginx-svc
 
 
 
