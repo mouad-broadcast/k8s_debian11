@@ -48,11 +48,11 @@ sudo apt update
 ```
 ```
 apt-cache madison containerd
-apt install containerd=1.6.20~ds1-1+b1
+apt install containerd=1.6.20~ds1-1+b1 -y
 ```
 ```
 cd /etc/containerd/
-wget https://raw.githubusercontent.com/mouad-broadcast/k8s_debian11/main/config.toml
+wget -N https://raw.githubusercontent.com/mouad-broadcast/k8s_debian11/main/config.toml
 ```
 ```
 systemctl restart containerd
