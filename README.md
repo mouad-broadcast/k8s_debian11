@@ -1,10 +1,11 @@
 Kubernetes On debian 11 
 
 
-|Role|FQDN|IP|OS|RAM|CPU|
-|----|----|----|----|----|----|
-|Master|kmaster.example.com|172.16.16.100|Ubuntu 20.04|2G|2|
-|Worker|kworker.example.com|172.16.16.101|Ubuntu 20.04|1G|1|
+|Role|IP|OS|RAM|CPU|
+|----|----|----|----|----|
+|Master|192.168.122.20|Debian 11bullseye|2G|2|
+|Worker|192.168.122.30|Debian 11bullseye|2G|2|
+|Worker|192.168.122.40|Debian 11bullseye|2G|2|
 
 
 1 ) Set Host Name and update /etc/hosts file
