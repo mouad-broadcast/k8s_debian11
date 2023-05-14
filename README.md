@@ -62,7 +62,7 @@ systemctl enable containerd
 ```
 sudo apt install gnupg gnupg2 curl software-properties-common -y
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/cgoogle.gpg
-$ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
 ```
 
 ## 5) Install Kubelet, Kubectl and Kubeadm on all nodes
