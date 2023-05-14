@@ -1,6 +1,6 @@
 # Kubernetes On Debian 11 with Containerd & Calico
 
-
+## Assumptions
 |Role|IP|OS|RAM|CPU|
 |----|----|----|----|----|
 |Master|192.168.122.20|Debian 11bullseye|2G|2|
