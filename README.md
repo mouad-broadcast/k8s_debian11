@@ -8,7 +8,7 @@
 |Worker|192.168.122.40|Debian 11bullseye|2G|2|
 
 
-1 ) Set Host Name and update /etc/hosts file
+## 1 ) Set Host Name and update /etc/hosts file
 
 192.168.122.20  master
 192.168.122.30  node1 node-1 
