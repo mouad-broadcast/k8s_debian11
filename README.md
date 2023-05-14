@@ -1,4 +1,4 @@
-# Kubernetes On debian 11 with containerd & calico
+# Kubernetes On Debian 11 with Containerd & Calico
 
 
 |Role|IP|OS|RAM|CPU|
